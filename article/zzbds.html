@@ -1,0 +1,1305 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+
+<style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; --title-bar-height:20px; }
+.mac-os-11 { --title-bar-height:28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; tab-size: 4; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+thead, tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+svg { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; padding-bottom: 0px !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+  .typora-export-show-outline .typora-export-sidebar { display: none; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.reversefootnote { font-family: ui-monospace, sans-serif; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.6; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background: inherit; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex:2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
+@media screen and (max-width: 1024px) {
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
+}
+@media screen and (max-width: 800px) {
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.42857rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ""; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left: 28px solid transparent; border-right: 28px solid transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ""; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right: 8px solid transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: "−"; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
+.md-inline-math-container mjx-container { zoom: 0.95; }
+
+
+:root {
+    --monospace: "JetBrains Mono", HYZhengYuan, "Fira Code", Menlo, "Ubuntu Mono", Consolas; /*code font*/
+    --text-font: var(--monospace); /*default font*/
+    --title-font: var(--monospace); /*title font*/
+
+    --bg-color: #283237;
+    --text-color: #b3bec4;
+    --control-text-color: var(--text-color);
+    --meta-content-color: var(--text-color);
+    --active-file-border-color: var(--drake-accent);
+    --rawblock-edit-panel-bd: var(--code-block-bg-color);
+    --item-hover-bg-color: #37474f;
+    --active-file-bg-color: var(--item-hover-bg-color);
+
+    --md-char-color: #535455;
+    --side-bar-bg-color: var(--bg-color);
+    --search-select-bg-color: #ffffff;
+    --search-select-text-color: var(--bg-color);
+    --select-text-bg-color: #3473B068;
+    --window-border: 1px solid #282828;
+
+    --drake-accent: #429488;
+    --drake-highlight: #429488;
+    --a-color: var(--drake-highlight);
+    --variable-color: var(--drake-highlight);
+    --outline-active-color: var(--a-color);
+    --code-block-bg-color: #1b2529;
+    --code-block-color: var(--text-color);
+    --title-color: #bbc6d2;
+    --blockquote-border-color: var(--drake-accent);
+    --blockquote-color: var(--text-color);
+    --blockquote-bg-color: #364149;
+    --strong-color: var(--title-color);
+    --h2-underline-color: var(--title-color);
+    --horizontal-divider-color: var(--title-color);
+    --height-light-color: var(--drake-highlight);
+    --height-light-border-color: var(--drake-highlight);
+    --yaml-color: #676773;
+    --yaml-bg-color: var(--code-block-bg-color);
+    --footnotes-bg-color: var(--item-hover-bg-color);
+    --footnotes-highlight: #FFD760;
+    --table-border-color: var(--item-hover-bg-color);
+    --table-header-bg-color: #314549;
+    --table-bg-color: var(--bg-color);
+    --table-n2-bg-color: var(--table-header-bg-color);
+    --input-bg-color: var(--item-hover-bg-color);
+    --btn-hover-bg-color: var(--item-hover-bg-color);
+    --checkbox-checked: url("data:image/svg+xml,%3Csvg class='icon' viewBox='0 0 1024 1024' xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cpath d='M425.984 726.016l384-384-59.99-61.995-324.01 324.011-152.021-152.021L213.973 512zm384-598.016q36.01 0 61.013 25.984T896 213.974v596.01q0 34.005-25.003 59.99t-61.013 25.983h-596.01q-36.011 0-61.014-25.984t-25.003-59.989v-596.01q0-34.006 25.003-59.99T213.973 128h596.011z' fill='%2365b73b'/%3E%3C/svg%3E");
+    --checkbox-unchecked: url("data:image/svg+xml,%3Csvg class='icon' viewBox='0 0 1024 1024' xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cpath d='M810.667 213.333v597.334H213.333V213.333h597.334m0-85.333H213.333C166.4 128 128 166.4 128 213.333v597.334C128 857.6 166.4 896 213.333 896h597.334C857.6 896 896 857.6 896 810.667V213.333C896 166.4 857.6 128 810.667 128z' fill='%23acb7c4'/%3E%3C/svg%3E");
+}
+
+html {
+    font-size: 12px;
+}
+
+body {
+    font-family: var(--text-font) !important;
+    color: var(--text-color);
+    -webkit-font-feature-settings: "liga" on, "calt" on;
+    -webkit-font-smoothing: subpixel-antialiased;
+    text-rendering: optimizeLegibility;
+    letter-spacing: 0;
+    margin: 0;
+    overflow-x: hidden;
+    line-height: 1.8rem;
+    font-size: 13px;
+}
+
+/*code block*/
+#write .md-fences {
+    font-size: 1rem;
+    padding: 0.5rem !important;
+    border-radius: 2px;
+    word-wrap: normal;
+    background-color: var(--code-block-bg-color);
+    color: var(--code-block-color);
+    border: none;
+}
+
+/*code snippet*/
+#write code, tt {
+    margin: 0 2px;
+    color: var(--drake-highlight);
+}
+
+/*variable*/
+var {
+    color: var(--variable-color);
+    font-weight: bold;
+}
+
+/*raw block*/
+.md-rawblock-control:not(.md-rawblock-tooltip) {
+    border-radius: 2px 0 2px 2px;
+    padding: 0.2rem !important;
+}
+
+.md-rawblock:hover > .md-rawblock-container {
+    background: none;
+}
+
+.md-rawblock-input {
+    font-size: 1rem;
+}
+
+.md-rawblock-tooltip-btn:hover {
+    background: none;
+}
+
+.md-rawblock:hover > .md-rawblock-tooltip {
+    border-radius: 2px 2px 0 0;
+    margin-bottom: 2px !important;
+}
+
+.md-rawblock-tooltip.md-rawblock-control {
+    border-radius: 2px 2px 0 0;
+    color: var(--code-block-color);
+}
+
+.md-rawblock-tooltip-name {
+    color: var(--code-block-color);
+    opacity: 1;
+}
+
+/*quote block*/
+blockquote:before {
+    display: block;
+    position: absolute;
+    content: '';
+    width: 4px;
+    left: 0;
+    top: 0;
+    height: 100%;
+    background-color: var(--blockquote-border-color);
+    border-radius: 2px;
+}
+
+blockquote {
+    color: var(--blockquote-color);
+    border-radius: 2px;
+    padding: 10px 16px;
+    background-color: var(--blockquote-bg-color);
+    position: relative;
+    border-left: none;
+}
+
+#write strong {
+    color: var(--strong-color);
+    font-weight: bold;
+}
+
+#write blockquote strong {
+    color: var(--blockquote-color);
+}
+
+/*link*/
+#write a {
+    color: var(--a-color);
+    text-decoration: none;
+}
+
+#write a .md-plain, .md-htmlblock-container a:hover {
+    border-bottom: .1rem solid var(--a-color);
+}
+
+[md-inline=link] a {
+    margin: 0 .2rem;
+}
+
+a:any-link {
+    color: var(--a-color);
+}
+
+img {
+    border-left: none;
+    border-right: none;
+    vertical-align: baseline;
+    border-radius: 2px;
+}
+
+#write {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 30px 100px;
+}
+
+#typora-source .CodeMirror-lines {
+    max-width: 1200px;
+}
+
+#write p {
+    word-spacing: .05rem;
+}
+
+#write > ul:first-child,
+#write > ol:first-child {
+    margin-top: 30px;
+}
+
+body > *:first-child {
+    margin-top: 0 !important;
+}
+
+body > *:last-child {
+    margin-bottom: 0 !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--title-font);
+    position: relative;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    cursor: text;
+    color: var(--title-color);
+}
+
+h3.md-focus:before, h4.md-focus:before, h5.md-focus:before, h6.md-focus:before {
+    visibility: hidden;
+}
+
+h1 {
+    font-size: 1.6rem;
+    text-align: center;
+    margin-top: 0;
+}
+
+h2.md-end-block.md-heading {
+    font-size: 1.6rem;
+    display: inline-block;
+}
+
+h2.md-end-block.md-heading:after {
+    display: block;
+    content: '';
+    height: 2px;
+    margin-top: 4px;
+    background-color: var(--h2-underline-color);
+    border-radius: 2px;
+}
+
+h3 {
+    font-size: 1.4rem;
+}
+
+h4 {
+    font-size: 1.2rem;
+}
+
+h5 {
+    font-size: 1rem;
+}
+
+h6 {
+    font-size: 1rem;
+}
+
+h1:hover a.anchor,
+h2:hover a.anchor,
+h3:hover a.anchor,
+h4:hover a.anchor,
+h5:hover a.anchor,
+h6:hover a.anchor {
+    text-decoration: none;
+}
+
+h1 tt,
+h1 code {
+    font-size: inherit !important;
+}
+
+h2 tt,
+h2 code {
+    font-size: inherit !important;
+}
+
+h3 tt,
+h3 code {
+    font-size: inherit !important;
+}
+
+h4 tt,
+h4 code {
+    font-size: inherit !important;
+}
+
+h5 tt,
+h5 code {
+    font-size: inherit !important;
+}
+
+h6 tt,
+h6 code {
+    font-size: inherit !important;
+}
+
+blockquote,
+ul,
+ol,
+dl,
+table {
+    margin: 0.8em 0;
+}
+
+p {
+    margin: 0;
+}
+
+li > ol,
+li > ul {
+    margin: 0 0;
+}
+
+hr {
+    height: 2px;
+    padding: 0;
+    margin: 16px 0;
+    background-color: var(--horizontal-divider-color);
+    border: 0 none;
+    overflow: hidden;
+    box-sizing: content-box;
+}
+
+body > h2:first-child {
+    margin-top: 0;
+    padding-top: 0;
+}
+
+body > h1:first-child {
+    margin-top: 0;
+    padding-top: 0;
+}
+
+body > h1:first-child + h2 {
+    margin-top: 0;
+    padding-top: 0;
+}
+
+body > h3:first-child,
+body > h4:first-child,
+body > h5:first-child,
+body > h6:first-child {
+    margin-top: 0;
+    padding-top: 0;
+}
+
+a:first-child h1,
+a:first-child h2,
+a:first-child h3,
+a:first-child h4,
+a:first-child h5,
+a:first-child h6 {
+    margin-top: 0;
+    padding-top: 0;
+}
+
+h1 p,
+h2 p,
+h3 p,
+h4 p,
+h5 p,
+h6 p {
+    margin-top: 0;
+}
+
+li p.first {
+    display: inline-block;
+}
+
+ul, ol {
+    padding-inline-start: 2em;
+}
+
+ul:first-child,
+ol:first-child {
+    margin-top: 0;
+}
+
+ul:last-child,
+ol:last-child {
+    margin-bottom: 0;
+}
+
+table {
+    padding: 0;
+    word-break: initial;
+    background-color: var(--table-bg-color);
+}
+
+table tr {
+    border-top: .1em solid var(--table-border-color);
+    margin: 0;
+    padding: 0;
+}
+
+table th {
+    font-weight: bold;
+    border: .1em solid var(--table-border-color);
+    border-bottom: 0;
+    margin: 0;
+    padding: 6px 13px;
+}
+
+table td {
+    border: .1em solid var(--table-border-color);
+    margin: 0;
+    padding: 6px 13px;
+}
+
+table thead {
+    background-color: var(--table-header-bg-color);
+}
+
+table tr:nth-child(2n) {
+    background-color: var(--table-n2-bg-color);
+}
+
+table tr th:first-child,
+table tr td:first-child {
+    margin-top: 0;
+}
+
+table tr th:last-child,
+table tr td:last-child {
+    margin-bottom: 0;
+}
+
+#write em {
+    padding: 0 5px 0 2px;
+}
+
+#write table thead th {
+    background-color: var(--table-header-bg-color);
+}
+
+/* height light */
+#write mark {
+    border: .1em solid var(--height-light-border-color);
+    color: var(--height-light-color);
+    background-color: transparent;
+    padding: .1rem .5rem;
+    border-radius: 2rem;
+    margin: 0 .2rem;
+    font-size: .95rem;
+}
+
+/*shortcut*/
+kbd {
+    border: .1em solid #5b5b5e;
+    background: transparent;
+    color: var(--text-color);
+    margin: 0 .4rem;
+    font-size: .95rem;
+    padding: .3em .4em;
+    border-radius: .4em;
+    vertical-align: top;
+    box-shadow: .1em .1em .2em rgba(0, 0, 0, 0.3);
+}
+
+#write del {
+    padding: 1px 2px;
+}
+
+.md-task-list-item > input {
+    margin-left: -1.3em;
+}
+
+@media print {
+    html {
+        font-size: 12px;
+    }
+
+    table,
+    pre {
+        page-break-inside: avoid;
+    }
+
+    pre {
+        word-wrap: break-word;
+    }
+}
+
+/*YAML*/
+#write pre.md-meta-block {
+    padding: 1rem;
+    font-size: 1rem;
+    background-color: var(--yaml-bg-color);
+    border: 0;
+    border-radius: 2px;
+    color: var(--yaml-color);
+    margin-top: 0 !important;
+}
+
+.mathjax-block > .code-tooltip {
+    bottom: .375rem;
+}
+
+#write > h3.md-focus:before {
+    left: -1.5625rem;
+    top: .375rem;
+}
+
+#write > h4.md-focus:before {
+    left: -1.5625rem;
+    top: .285714286rem;
+}
+
+#write > h5.md-focus:before {
+    left: -1.5625rem;
+    top: .285714286rem;
+}
+
+#write > h6.md-focus:before {
+    left: -1.5625rem;
+    top: .285714286rem;
+}
+
+.md-image > .md-meta {
+    border-radius: 2px;
+    font-family: initial;
+    padding: 2px 0 0 4px;
+    color: inherit;
+}
+
+.md-tag {
+    color: inherit;
+}
+
+.md-toc {
+    margin-top: 20px;
+    padding-bottom: 20px;
+}
+
+.typora-quick-open-item {
+    font-size: 1rem !important;
+    height: 50px;
+    padding-left: 8px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+
+#typora-quick-open {
+    box-shadow: 0 0 8px #00000045;
+    padding: 0;
+}
+
+.ty-quick-open-category.ty-has-prev .ty-quick-open-category-title {
+    border-top: none;
+}
+
+#typora-quick-open-input {
+    margin: 8px;
+    box-shadow: none;
+    border-radius: 2px;
+}
+
+#typora-quick-open-input input {
+    font-size: 1rem;
+    box-shadow: none;
+    padding-top: 2px;
+    padding-left: 10px;
+    padding-right: 10px;
+    line-height: 32px;
+    max-height: 32px;
+    border: none;
+}
+
+.modal-dialog#typora-quick-open {
+    border-radius: 8px;
+}
+
+.ty-quick-open-category-title {
+    padding-left: 8px;
+    color: #BEBEBE;
+    font-size: 0.8rem;
+    margin-bottom: 4px;
+}
+
+.typora-quick-open-item-path {
+    font-size: 0.8rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-top: 1px;
+}
+
+/*search input*/
+.form-control {
+    border: none;
+    border-radius: 2px;
+    box-shadow: none;
+}
+
+#md-searchpanel .btn {
+    border-radius: 2px;
+}
+
+#search-panel-replaceall-btn {
+    padding-right: 5px !important;
+    text-align: center !important;
+}
+
+#search-panel-replace-btn {
+    text-align: center !important;
+}
+
+#md-searchpanel input {
+    background: var(--input-bg-color);
+    border-radius: 2px;
+}
+
+.searchpanel-search-option-btn {
+    border-radius: 2px;
+    border: none;
+    background: transparent;
+    color: var(--text-color);
+}
+
+.searchpanel-search-option-btn.active {
+    background: var(--text-color);
+    color: var(--bg-color);
+}
+
+.form-control:focus {
+    box-shadow: none;
+}
+
+#md-notification:before {
+    top: 10px;
+}
+
+/** focus mode */
+.on-focus-mode blockquote {
+    border-left-color: rgba(85, 85, 85, 0.12);
+}
+
+header,
+.context-menu,
+.megamenu-content,
+footer {
+    font-family: initial;
+}
+
+/*sidebar*/
+.file-node-content:hover .file-node-icon,
+.file-node-content:hover .file-node-open-state {
+    visibility: visible;
+}
+
+#typora-sidebar {
+    font-size: 1.1rem;
+}
+
+.sidebar-tabs {
+    border-bottom: none;
+}
+
+.file-list-item-summary, .file-list-item-parent-loc, .file-list-item-time, .file-list-item-summary {
+    font-size: 0.9rem !important;
+    font-family: var(--text-font);
+}
+
+.file-list-item-file-ext-part {
+    display: none;
+}
+
+.outline-item {
+    font-size: 1rem;
+}
+
+/*footnotes mark*/
+#write .md-footnote {
+    background-color: inherit;
+    color: var(--drake-highlight);
+    font-size: 0.9rem;
+    border-radius: 0.9rem;
+    padding-left: 0;
+}
+
+#write .md-footnote:before {
+    content: "[";
+}
+
+#write .md-footnote:after {
+    content: "]";
+}
+
+/*footnotes content*/
+.md-hover-tip .code-tooltip-content {
+    border-radius: 2px;
+}
+
+/*footnotes title*/
+span.md-def-name {
+    padding-right: 3ch;
+    padding-left: 0;
+    position: relative;
+    font-weight: normal;
+}
+
+/*footnotes desc*/
+.footnotes {
+    font-size: 1rem;
+    font-weight: normal;
+    color: var(--text-color);
+    position: relative;
+}
+
+/*footnotes tooltip text*/
+.code-tooltip-content .md-plain {
+    font-size: 0.9rem;
+    font-family: inherit;
+}
+
+.code-tooltip-content code {
+    padding: 0 2px;
+    font-family: inherit;
+    color: var(--footnotes-highlight);
+    background-color: inherit;
+}
+
+.code-tooltip-content a {
+    color: var(--footnotes-highlight);
+}
+
+div.code-tooltip-content {
+    box-shadow: 0 0 8px #00000045;
+    background: var(--footnotes-bg-color);
+}
+
+.footnotes {
+    opacity: 1;
+}
+
+.md-def-name:after {
+    content: ". ^";
+    color: var(--text-color);
+}
+
+.md-def-footnote .md-def-name:before {
+    content: "";
+    color: var(--text-color);
+    position: absolute;
+}
+
+.md-def-name:before {
+    content: "";
+    color: var(--text-color);
+    position: absolute;
+}
+
+.md-content.md-url, .md-def-content.md-def-url.md-auto-disp {
+    text-decoration: none;
+    border-bottom: .1rem solid var(--text-color);
+}
+
+.CodeMirror-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+.file-list-item-summary {
+    font-size: 1em;
+}
+
+.pin-outline #outline-content .outline-active strong, .pin-outline .outline-active {
+    font-weight: 500;
+    color: var(--outline-active-color);
+}
+
+.file-list-item.active {
+    border-left: 4px solid var(--drake-accent);
+}
+
+#md-searchpanel .btn:not(.close-btn):hover {
+    box-shadow: none;
+    background: var(--btn-hover-bg-color);
+}
+
+/*checkbox*/
+#write input[type=checkbox] {
+    opacity: 0;
+    height: 1.6rem;
+    width: 1.6rem;
+    margin-left: -2em;
+    margin-top: 0;
+    top: 0;
+}
+
+#write .ul-list li.md-task-list-item.task-list-done::before {
+    content: "";
+    background: var(--checkbox-checked) 0 0 no-repeat;
+    background-size: 100%;
+    display: inline-block;
+    position: absolute;
+    height: 1.6rem;
+    width: 1.6rem;
+    margin-left: -2em;
+}
+
+#write .ul-list li.md-task-list-item.task-list-not-done::before {
+    content: "";
+    background: var(--checkbox-unchecked) 0 0 no-repeat;
+    background-size: 100%;
+    display: inline-block;
+    position: absolute;
+    height: 1.6rem;
+    width: 1.6rem;
+    margin-left: -2em;
+}
+
+/*insert table*/
+.btn {
+    border-radius: 2px;
+}
+
+.modal-content {
+    border-radius: 8px;
+}
+
+.btn-primary:hover, .btn-primary:active {
+    background-color: var(--btn-hover-bg-color);
+    color: var(--drake-highlight);
+}
+
+.btn-primary {
+    background-color: transparent;
+    color: var(--drake-highlight);
+}
+
+.btn-default {
+    background-color: transparent;
+}
+
+.btn:active {
+    box-shadow: none;
+    border-color: transparent;
+}
+
+.modal-footer {
+    border-top: none;
+}
+
+#table-insert-col, #table-insert-row {
+    background: var(--input-bg-color);
+    border-radius: 2px;
+}
+
+/*preference panel*/
+#megamenu-content {
+    background-image: none !important;
+    background-color: var(--bg-color);
+}
+
+#top-titlebar {
+    height: inherit;
+    background-color: var(--bg-color);
+}
+
+#megamenu-menu-sidebar {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+.long-btn {
+    width: inherit;
+    min-width: 300px;
+    border: 1px solid var(--text-color);
+    border-radius: 6px;
+}
+
+.megamenu-menu-panel h1 {
+    margin-bottom: 3rem;
+    text-align: left;
+}
+
+.megamenu-menu-panel h1, .megamenu-menu-panel h2 {
+    font-weight: normal;
+}
+
+#recent-file-panel-search-input {
+    height: 45px;
+    border: none;
+    border-bottom: 1px solid var(--text-color);
+    padding-left: 8px;
+}
+
+#recent-file-panel-search-input::placeholder {
+    color: var(--text-color);
+    opacity: .5;
+}
+
+.megamenu-menu-header {
+    border-bottom: none;
+}
+
+#recent-file-panel-action-btn {
+    background: none;
+    border: none;
+}
+
+#recent-file-panel-action-btn-container {
+    float: none;
+    display: inline-block;
+}
+
+#top-titlebar .toolbar-icon.btn.hover, #top-titlebar .toolbar-icon.btn:hover {
+    background-color: var(--btn-hover-bg-color);
+    color: var(--text-color);
+}
+
+.megamenu-menu-panel .btn:hover {
+    background-color: var(--btn-hover-bg-color) !important;
+    color: var(--text-color);
+}
+
+#recent-file-panel tbody tr:nth-child(2n-1),
+.megamenu-menu-panel table thead,
+.megamenu-menu-panel table tr {
+    background-color: transparent;
+}
+
+.megamenu-menu-panel table {
+    font-weight: normal;
+}
+
+#megamenu-back-btn {
+    color: var(--text-color);
+    border: 1px solid var(--text-color);
+}
+
+.megamenu-menu-header #megamenu-menu-header-title {
+    color: var(--text-color);
+}
+
+header, .context-menu, .megamenu-content, footer {
+    font-family: var(--text-font);
+}
+
+.ty-preferences select {
+    padding-left: 2px;
+}
+
+.preference-item-hint {
+    font-size: 14px;
+}
+
+a.ty-link {
+    color: var(--a-color);
+    margin: 0 .2rem;
+}
+
+/*
+  Name:       material
+  Author:     Mattia Astorino (http://github.com/equinusocio)
+  Website:    https://material-theme.site/
+*/
+.cm-s-inner.CodeMirror {
+    background: none;
+    color: var(--code-block-color);
+}
+
+.cm-s-inner .CodeMirror-gutters {
+    border-right: none;
+    border-radius: 2px;
+    padding-left: 0.5rem;
+    background: #263238;
+    color: #546E7A;
+}
+
+.cm-s-inner .CodeMirror-guttermarker,
+.cm-s-inner .CodeMirror-guttermarker-subtle,
+.cm-s-inner .CodeMirror-linenumber {
+    color: #546E7A;
+}
+
+.cm-s-inner .CodeMirror-line::selection,
+.cm-s-inner .CodeMirror-line > span::selection,
+.cm-s-inner .CodeMirror-line > span > span::selection {
+    background: rgba(128, 203, 196, 0.2);
+}
+
+.cm-s-inner .CodeMirror-line::-moz-selection,
+.cm-s-inner .CodeMirror-line > span::-moz-selection,
+.cm-s-inner .CodeMirror-line > span > span::-moz-selection {
+    background: rgba(128, 203, 196, 0.2);
+}
+
+.cm-s-inner .cm-keyword {
+    color: #C792EA;
+}
+
+.cm-s-inner .cm-operator {
+    color: #89DDFF;
+}
+
+.cm-s-inner .cm-variable-2 {
+    color: var(--code-block-color);
+}
+
+.cm-s-inner .cm-variable-3,
+.cm-s-inner .cm-type {
+    color: #f07178;
+}
+
+.cm-s-inner .cm-builtin {
+    color: #FFCB6B;
+}
+
+.cm-s-inner .cm-atom {
+    color: #F78C6C;
+}
+
+.cm-s-inner .cm-number {
+    color: #FF5370;
+}
+
+.cm-s-inner .cm-def {
+    color: #82AAFF;
+}
+
+.cm-s-inner .cm-string {
+    color: #C3E88D;
+}
+
+.cm-s-inner .cm-string-2 {
+    color: #f07178;
+}
+
+.cm-s-inner .cm-comment {
+    color: #546E7A;
+}
+
+.cm-s-inner .cm-variable {
+    color: var(--code-block-color);
+}
+
+.cm-s-inner .cm-tag {
+    color: #FF5370;
+}
+
+.cm-s-inner .cm-meta {
+    color: #FFCB6B;
+}
+
+.cm-s-inner .cm-attribute {
+    color: #C792EA;
+}
+
+.cm-s-inner .cm-property {
+    color: #C792EA;
+}
+
+.cm-s-inner .cm-qualifier {
+    color: #DECB6B;
+}
+
+.cm-s-inner .cm-variable-3,
+.cm-s-inner .cm-type {
+    color: #DECB6B;
+}
+
+.cm-s-inner .cm-error {
+    color: rgba(255, 255, 255, 1.0);
+    background-color: #FF5370;
+}
+
+.cm-s-inner .CodeMirror-matchingbracket {
+    text-decoration: underline;
+    color: white !important;
+}
+
+.cm-s-inner .CodeMirror-selected {
+    background: #214283 !important;
+}
+
+.cm-s-inner .CodeMirror-selectedtext {
+    background: #214283 !important;
+}
+
+.cm-s-typora-default .CodeMirror-selectedtext {
+    background: var(--select-text-bg-color) !important;
+}
+
+.cm-overlay.CodeMirror-selectedtext {
+    background: var(--select-text-bg-color) !important;
+}
+
+.cm-s-inner div.CodeMirror-cursor {
+    border-left: 1px solid var(--code-block-color);
+}
+
+
+</style><title>正则表达式速查备忘手册</title>
+</head>
+<body class='typora-export os-windows'><div class='typora-export-content'>
+<div id='write'  class=' first-line-indent'><h1 id='正则表达式速查备忘手册'><span><span>《正则表达式速查备忘手册》</span></span></h1><ul><li><span><span>由于时间仓促和个⼈精⼒有限，难免会有疏漏和不当的地⽅，还望多多谅解</span></span></li><li><span><span>该⽂档会持续更新，有新东⻄再往⾥加</span></span></li></ul><hr /><h1 id='基础正则表达式速查表'><strong><span><span>基础正则表达式速查表</span></span></strong></h1><h2 id='字符'><strong><span><span>字符</span></span></strong></h2><figure><table><thead><tr><th style="text-align:left;"><span>表达式</span></th><th style="text-align:left;"><span>描述</span></th></tr></thead><tbody><tr><td style="text-align:left;">`[abc]`</td><td style="text-align:left;"><span>字符集。匹配集合中所含的任一字符。</span></td></tr><tr><td style="text-align:left;">`[^abc]`</td><td style="text-align:left;"><span>否定字符集。匹配任何不在集合中的字符。</span></td></tr><tr><td style="text-align:left;">`[a-z]`</td><td style="text-align:left;"><span>字符范围。匹配指定范围内的任意字符。</span></td></tr><tr><td style="text-align:left;">`.`</td><td style="text-align:left;"><span>匹配除换行符以外的任何单个字符。</span></td></tr><tr><td style="text-align:left;">`\`</td><td style="text-align:left;"><span>转义字符。</span></td></tr><tr><td style="text-align:left;">`\w`</td><td style="text-align:left;"><span>匹配任何字母数字，包括下划线（等价于</span>`[A-Za-z0-9_]`<span>）。</span></td></tr><tr><td style="text-align:left;">`\W`</td><td style="text-align:left;"><span>匹配任何非字母数字（等价于</span>`[^A-Za-z0-9_]`<span>）。</span></td></tr><tr><td style="text-align:left;">`\d`</td><td style="text-align:left;"><span>数字。匹配任何数字。</span></td></tr><tr><td style="text-align:left;">`\D`</td><td style="text-align:left;"><span>非数字。匹配任何非数字字符。</span></td></tr><tr><td style="text-align:left;">`\s`</td><td style="text-align:left;"><span>空白。匹配任何空白字符，包括空格、制表符等。</span></td></tr><tr><td style="text-align:left;">`\S`</td><td style="text-align:left;"><span>非空白。匹配任何非空白字符。</span></td></tr></tbody></table></figure><h2 id='分组和引用'><strong><span><span>分组和引用</span></span></strong></h2><figure><table><thead><tr><th style="text-align:left;"><span>表达式</span></th><th style="text-align:left;"><span>描述</span></th></tr></thead><tbody><tr><td style="text-align:left;">`(expression)`</td><td style="text-align:left;"><span>分组。匹配括号里的整个表达式。</span></td></tr><tr><td style="text-align:left;">`(?:expression)`</td><td style="text-align:left;"><span>非捕获分组。匹配括号里的整个字符串但不获取匹配结果，拿不到分组引用。</span></td></tr><tr><td style="text-align:left;">`\num`</td><td style="text-align:left;"><span>对前面所匹配分组的引用。比如</span>`(\d)\1`<span>可以匹配两个相同的数字，</span>`(Code)(Sheep)\1\2`<span>则可以匹配</span>`CodeSheepCodeSheep`<span>。</span></td></tr></tbody></table></figure><h2><strong><span><span>锚点/边界</span></span></strong></h2><figure><table><thead><tr><th style="text-align:left;"><span>表达式</span></th><th style="text-align:left;"><span>描述</span></th></tr></thead><tbody><tr><td style="text-align:left;">`^`</td><td style="text-align:left;"><span>匹配字符串或行开头。</span></td></tr><tr><td style="text-align:left;">`$`</td><td style="text-align:left;"><span>匹配字符串或行结尾。</span></td></tr><tr><td style="text-align:left;">`\b`</td><td style="text-align:left;"><span>匹配单词边界。比如</span>`Sheep\b`<span>可以匹配</span>`CodeSheep`<span>末尾的</span>`Sheep`<span>，不能匹配</span>`CodeSheepCode`<span>中的</span>`Sheep`<span>。</span></td></tr><tr><td style="text-align:left;">`\B`</td><td style="text-align:left;"><span>匹配非单词边界。比如</span>`Code\B`<span>可以匹配</span>`HelloCodeSheep`<span>中的</span>`Code`<span>，不能匹配</span>`HelloCode`<span>中的</span>`Code`<span>。</span></td></tr></tbody></table></figure><h2 id='数量表示'><strong><span><span>数量表示</span></span></strong></h2><figure><table><thead><tr><th style="text-align:left;"><span>表达式</span></th><th style="text-align:left;"><span>描述</span></th></tr></thead><tbody><tr><td style="text-align:left;">`?`</td><td style="text-align:left;"><span>匹配前面的表达式0个或1个。即表示可选项。</span></td></tr><tr><td style="text-align:left;">`+`</td><td style="text-align:left;"><span>匹配前面的表达式至少1个。</span></td></tr><tr><td style="text-align:left;">`*`</td><td style="text-align:left;"><span>匹配前面的表达式0个或多个。</span></td></tr><tr><td style="text-align:left;">`|`</td><td style="text-align:left;"><span>或运算符。并集，可以匹配符号前后的表达式。</span></td></tr><tr><td style="text-align:left;">`{m}`</td><td style="text-align:left;"><span>匹配前面的表达式m个。</span></td></tr><tr><td style="text-align:left;">`{m,}`</td><td style="text-align:left;"><span>匹配前面的表达式最少m个。</span></td></tr><tr><td style="text-align:left;">`{m,n}`</td><td style="text-align:left;"><span>匹配前面的表达式最少m个，最多n个。</span></td></tr></tbody></table></figure><h2 id='预查断言'><strong><span><span>预查断言：</span></span></strong></h2><figure><table><thead><tr><th style="text-align:left;"><span>表达式</span></th><th style="text-align:left;"><span>描述</span></th></tr></thead><tbody><tr><td style="text-align:left;">`(?=)`</td><td style="text-align:left;"><span>正向预查。比如</span>`Code(?=Sheep)`<span>能匹配</span>`CodeSheep`<span>中的</span>`Code`<span>，但不能匹配</span>`CodePig`<span>中的</span>`Code`<span>。</span></td></tr><tr><td style="text-align:left;">`(?!)`</td><td style="text-align:left;"><span>正向否定预查。比如</span>`Code(?!Sheep)`<span>不能匹配</span>`CodeSheep`<span>中的</span>`Code`<span>，但能匹配</span>`CodePig`<span>中的</span>`Code`<span>。</span></td></tr><tr><td style="text-align:left;">`(?&lt;=)`</td><td style="text-align:left;"><span>反向预查。比如</span>`(?&lt;=Code)Sheep`<span>能匹配</span>`CodeSheep`<span>中的</span>`Sheep`<span>，但不能匹配</span>`ReadSheep`<span>中的</span>`Sheep`<span>。</span></td></tr><tr><td style="text-align:left;">`(?&lt;!)`</td><td style="text-align:left;"><span>反向否定预查。比如</span>`(?&lt;!Code)Sheep`<span>不能匹配</span>`CodeSheep`<span>中的</span>`Sheep`<span>，但能匹配</span>`ReadSheep`<span>中的</span>`Sheep`<span>。</span></td></tr></tbody></table></figure><h2 id='特殊标志'><strong><span><span>特殊标志</span></span></strong></h2><figure><table><thead><tr><th style="text-align:left;"><span>表达式</span></th><th style="text-align:left;"><span>描述</span></th></tr></thead><tbody><tr><td style="text-align:left;">`/.../i`</td><td style="text-align:left;"><span>忽略大小写。</span></td></tr><tr><td style="text-align:left;">`/.../g`</td><td style="text-align:left;"><span>全局匹配。</span></td></tr><tr><td style="text-align:left;">`/.../m`</td><td style="text-align:left;"><span>多行修饰符。用于多行匹配。</span></td></tr></tbody></table></figure><h1 id='常用正则表达式示例'><strong><span><span>常用正则表达式示例</span></span></strong></h1><h2 id='数字校验'><strong><span><span>数字校验</span></span></strong></h2><figure><table><thead><tr><th style="text-align:left;"><span>描述</span></th><th style="text-align:left;"><span>正则表达式</span></th><th style="text-align:left;"><span>备注</span></th></tr></thead><tbody><tr><td style="text-align:left;"><span>数字</span></td><td style="text-align:left;">`^[0-9]*$`</td><td style="text-align:left;">&nbsp;</td></tr><tr><td style="text-align:left;"><span>n位数字</span></td><td style="text-align:left;">`^\d{n}$`</td><td style="text-align:left;">&nbsp;</td></tr><tr><td style="text-align:left;"><span>至少n位数字</span></td><td style="text-align:left;">`^\d{n,}$`</td><td style="text-align:left;">&nbsp;</td></tr><tr><td style="text-align:left;"><span>m~n位数字</span></td><td style="text-align:left;">`^\d{m,n}$`</td><td style="text-align:left;">&nbsp;</td></tr><tr><td style="text-align:left;"><span>整数</span></td><td style="text-align:left;">`^(-?[1-9]\d*)$`</td><td style="text-align:left;"><span>非0开头，包括正整数和负整数</span></td></tr><tr><td style="text-align:left;"><span>正整数</span></td><td style="text-align:left;">`^[1-9]\d*$`</td><td style="text-align:left;">&nbsp;</td></tr><tr><td style="text-align:left;"><span>负整数</span></td><td style="text-align:left;">`^-[1-9]\d*$`</td><td style="text-align:left;">&nbsp;</td></tr><tr><td style="text-align:left;"><span>非负整数</span></td><td style="text-align:left;">`^(([1-9]\d*)|0)$`</td><td style="text-align:left;">&nbsp;</td></tr><tr><td style="text-align:left;"><span>非正整数</span></td><td style="text-align:left;">`^((-[1-9]\d*)|0)$`</td><td style="text-align:left;">&nbsp;</td></tr><tr><td style="text-align:left;"><span>浮点数</span></td><td style="text-align:left;">`^-?(?:[1-9]\d*\.\d*|0\.\d*[1-9]\d*|0\.0+|0)$`</td><td style="text-align:left;"><span>包括正浮点数和负浮点数</span></td></tr><tr><td style="text-align:left;"><span>正浮点数</span></td><td style="text-align:left;">`^(?:[1-9]\d*\.\d*|0\.\d*[1-9]\d*)$`</td><td style="text-align:left;">&nbsp;</td></tr><tr><td style="text-align:left;"><span>负浮点数</span></td><td style="text-align:left;">`^-(?:[1-9]\d*\.\d*|0\.\d*[1-9]\d*)$`</td><td style="text-align:left;">&nbsp;</td></tr><tr><td style="text-align:left;"><span>非正浮点数</span></td><td style="text-align:left;">`^(?:-(?:[1-9]\d*\.\d+|0\.\d*[1-9]\d*)|0\.0+|0)$`</td><td style="text-align:left;"><span>包含0</span></td></tr><tr><td style="text-align:left;"><span>非负浮点数</span></td><td style="text-align:left;">`^(?:[1-9]\d*\.\d+|0\.\d+|0\.0+|0)$`</td><td style="text-align:left;"><span>包含0</span></td></tr><tr><td style="text-align:left;"><span>仅一位小数</span></td><td style="text-align:left;">`^-?(?:0|[1-9][0-9]*)\.[0-9]{1}$`</td><td style="text-align:left;">&nbsp;</td></tr><tr><td style="text-align:left;"><span>最少一位小数</span></td><td style="text-align:left;">`^-?(?:0|[1-9][0-9]*)\.[0-9]{1,}$`</td><td style="text-align:left;">&nbsp;</td></tr><tr><td style="text-align:left;"><span>最多两位小数</span></td><td style="text-align:left;">`^-?(?:0|[1-9][0-9]*)\.[0-9]{1,2}$`</td><td style="text-align:left;">&nbsp;</td></tr><tr><td style="text-align:left;"><span>连续重复的数字</span></td><td style="text-align:left;">`^(\d)\1+$`</td><td style="text-align:left;"><span>例如：</span>`111`<span>，</span>`222`</td></tr></tbody></table></figure><h2 id='字符校验'><strong><span><span>字符校验</span></span></strong></h2><figure><table><thead><tr><th style="text-align:left;"><span>描述</span></th><th style="text-align:left;"><span>正则表达式</span></th><th style="text-align:left;"><span>备注</span></th></tr></thead><tbody><tr><td style="text-align:left;"><span>中文</span></td><td style="text-align:left;">`^[\u4E00-\u9FA5]+$`</td><td style="text-align:left;">&nbsp;</td></tr><tr><td style="text-align:left;"><span>全角字符</span></td><td style="text-align:left;">`^[\uFF00-\uFFFF]+$`</td><td style="text-align:left;">&nbsp;</td></tr><tr><td style="text-align:left;"><span>半角字符</span></td><td style="text-align:left;">`^[\u0000-\u00FF]+$`</td><td style="text-align:left;">&nbsp;</td></tr><tr><td style="text-align:left;"><span>英文字符串（大写）</span></td><td style="text-align:left;">`^[A-Z]+$`</td><td style="text-align:left;">&nbsp;</td></tr><tr><td style="text-align:left;"><span>英文字符串（小写）</span></td><td style="text-align:left;">`^[a-z]+$`</td><td style="text-align:left;">&nbsp;</td></tr><tr><td style="text-align:left;"><span>英文字符串（不区分大小写）</span></td><td style="text-align:left;">`^[A-Za-z]+$`</td><td style="text-align:left;">&nbsp;</td></tr><tr><td style="text-align:left;"><span>中文和数字</span></td><td style="text-align:left;">`^(?:[\u4E00-\u9FA5]{0,}|\d)+$`</td><td style="text-align:left;">&nbsp;</td></tr><tr><td style="text-align:left;"><span>英文和数字</span></td><td style="text-align:left;">`^[A-Za-z0-9]+$`</td><td style="text-align:left;">&nbsp;</td></tr><tr><td style="text-align:left;"><span>数字、英文字母或者下划线组成的字符串</span></td><td style="text-align:left;">`^\w+$`</td><td style="text-align:left;">&nbsp;</td></tr><tr><td style="text-align:left;"><span>中文、英文、数字包括下划线</span></td><td style="text-align:left;">`^[\u4E00-\u9FA5\w]+$`</td><td style="text-align:left;">&nbsp;</td></tr><tr><td style="text-align:left;"><span>不含字母的字符串</span></td><td style="text-align:left;">`^[^A-Za-z]*$`</td><td style="text-align:left;">&nbsp;</td></tr><tr><td style="text-align:left;"><span>连续重复的字符串</span></td><td style="text-align:left;">`^(.)\1+$`</td><td style="text-align:left;"><span>例如：</span>`aaa`<span>，</span>`bbb`</td></tr><tr><td style="text-align:left;"><span>长度为n的字符串</span></td><td style="text-align:left;">`^.{n}$`</td><td style="text-align:left;">&nbsp;</td></tr><tr><td style="text-align:left;"><span>ASCII</span></td><td style="text-align:left;">`^[ -~]$`</td><td style="text-align:left;">&nbsp;</td></tr></tbody></table></figure><h2 id='日期和时间校验'><strong><span><span>日期和时间校验</span></span></strong></h2><figure><table><thead><tr><th style="text-align:left;"><span>描述</span></th><th style="text-align:left;"><span>正则表达式</span></th><th style="text-align:left;"><span>备注</span></th></tr></thead><tbody><tr><td style="text-align:left;"><span>日期</span></td><td style="text-align:left;">`^\d{1,4}-(?:1[0-2]|0?[1-9])-(?:0?[1-9]|[1-2]\d|30|31)$`</td><td style="text-align:left;"><span>弱校验，例如：</span>`2022-06-12`</td></tr><tr><td style="text-align:left;"><span>日期</span></td><td style="text-align:left;">`^(?:(?!0000)[0-9]{4}-(?:(?:0[1-9]|1[0-2])-(?:0[1-9]|1[0-9]|2[0-8])|(?:0[13-9]|1[0-2])-(?:29|30)|(?:0[13578]|1[02])-31)|(?:[0-9]{2}(?:0[48]|[2468][048]|[13579][26])|(?:0[48]|[2468][048]|[13579][26])00)-02-29)$`</td><td style="text-align:left;"><span>严格校验，考虑平闰年</span></td></tr><tr><td style="text-align:left;"><span>时间</span></td><td style="text-align:left;">`^(?:1[0-2]|0?[1-9]):[0-5]\d:[0-5]\d$`</td><td style="text-align:left;"><span>12小时制，例如：</span>`11:21:31`</td></tr><tr><td style="text-align:left;"><span>时间</span></td><td style="text-align:left;">`^(?:[01]\d|2[0-3]):[0-5]\d:[0-5]\d$`</td><td style="text-align:left;"><span>24小时制，例如：</span>`23:21:31`</td></tr><tr><td style="text-align:left;"><span>日期+时间</span></td><td style="text-align:left;">`^(\d{1,4}-(?:1[0-2]|0?[1-9])-(?:0?[1-9]|[1-2]\d|30|31)) ((?:[01]\d|2[0-3]):[0-5]\d:[0-5]\d)$`</td><td style="text-align:left;"><span>例如：</span>`2000-11-11 23:20:21`</td></tr></tbody></table></figure><h2 id='日常生活相关'><strong><span><span>日常生活相关</span></span></strong></h2><figure><table><thead><tr><th style="text-align:left;"><span>描述</span></th><th style="text-align:left;"><span>正则表达式</span></th><th style="text-align:left;"><span>备注</span></th></tr></thead><tbody><tr><td style="text-align:left;"><span>中文名</span></td><td style="text-align:left;">`^[\u4E00-\u9FA5·]{2,16}$`</td><td style="text-align:left;">&nbsp;</td></tr><tr><td style="text-align:left;"><span>英文名</span></td><td style="text-align:left;">`^[a-zA-Z][a-zA-Z\s]{0,20}[a-zA-Z]$`</td><td style="text-align:left;">&nbsp;</td></tr><tr><td style="text-align:left;"><span>车牌号</span></td><td style="text-align:left;">`^[京津沪渝冀豫云辽黑湘皖鲁新苏浙赣鄂桂甘晋蒙陕吉闽贵粤青藏川宁琼使领][A-HJ-NP-Z][A-HJ-NP-Z0-9]{4}[A-HJ-NP-Z0-9挂学警港澳]$`</td><td style="text-align:left;"><span>不含新能源</span></td></tr><tr><td style="text-align:left;"><span>车牌号</span></td><td style="text-align:left;">`^[京津沪渝冀豫云辽黑湘皖鲁新苏浙赣鄂桂甘晋蒙陕吉闽贵粤青藏川宁琼使领][A-HJ-NP-Z](?:(?:[A-HJ-NP-Z0-9]{4}[A-HJ-NP-Z0-9挂学警港澳])|(?:(?:\d{5}[A-HJK])|(?:[A-HJK][A-HJ-NP-Z0-9][0-9]{4})))$`</td><td style="text-align:left;"><span>包含新能源</span></td></tr><tr><td style="text-align:left;"><span>火车车次</span></td><td style="text-align:left;">`^[GCDZTSPKXLY1-9]\d{1,4}$`</td><td style="text-align:left;"><span>例如：</span>`G1234`</td></tr><tr><td style="text-align:left;"><span>手机号</span></td><td style="text-align:left;">`^(?:(?:\+|00)86)?1[3-9]\d{9}$`</td><td style="text-align:left;"><span>弱匹配</span></td></tr><tr><td style="text-align:left;"><span>手机号</span></td><td style="text-align:left;">`^(?:(?:\+|00)86)?1(?:(?:3[\d])|(?:4[5-79])|(?:5[0-35-9])|(?:6[5-7])|(?:7[0-8])|(?:8[\d])|(?:9[189]))\d{8}$`</td><td style="text-align:left;"><span>严格匹配</span></td></tr><tr><td style="text-align:left;"><span>固话号码</span></td><td style="text-align:left;">`^(?:(?:\d{3}-)?\d{8}|^(?:\d{4}-)?\d{7,8})(?:-\d+)?$`</td><td style="text-align:left;">&nbsp;</td></tr><tr><td style="text-align:left;"><span>手机IMEI码</span></td><td style="text-align:left;">`^\d{15,17}$`</td><td style="text-align:left;"><span>一般是15位</span></td></tr><tr><td style="text-align:left;"><span>邮编</span></td><td style="text-align:left;">`^(?:0[1-7]|1[0-356]|2[0-7]|3[0-6]|4[0-7]|5[1-7]|6[1-7]|7[0-5]|8[013-6])\d{4}$`</td><td style="text-align:left;"><span>例如：</span>`211100`</td></tr><tr><td style="text-align:left;"><span>统一社会信用代码</span></td><td style="text-align:left;">`^[0-9A-HJ-NPQRTUWXY]{2}\d{6}[0-9A-HJ-NPQRTUWXY]{10}$`</td><td style="text-align:left;">&nbsp;</td></tr><tr><td style="text-align:left;"><span>身份证号码(1代)</span></td><td style="text-align:left;">`^[1-9]\d{7}(?:0\d|10|11|12)(?:0[1-9]|[1-2][\d]|30|31)\d{3}$`</td><td style="text-align:left;"><span>15位数字</span></td></tr><tr><td style="text-align:left;"><span>身份证号码(2代)</span></td><td style="text-align:left;">`^[1-9]\d{5}(?:18|19|20)\d{2}(?:0[1-9]|10|11|12)(?:0[1-9]|[1-2]\d|30|31)\d{3}[0-9Xx]$`</td><td style="text-align:left;"><span>18位数字</span></td></tr><tr><td style="text-align:left;"><span>QQ号</span></td><td style="text-align:left;">`^[1-9][0-9]{4,}$`</td><td style="text-align:left;"><span>一般是5到10位</span></td></tr><tr><td style="text-align:left;"><span>微信号</span></td><td style="text-align:left;">`^[a-zA-Z][-_a-zA-Z0-9]{5,19}$`</td><td style="text-align:left;"><span>一般6~20位，字母开头，可包含字母、数字、-、_，不含特殊字符</span></td></tr><tr><td style="text-align:left;"><span>股票代码</span></td><td style="text-align:left;">`^(s[hz]|S[HZ])(000[\d]{3}|002[\d]{3}|300[\d]{3}|600[\d]{3}|60[\d]{4})$`</td><td style="text-align:left;"><span>A股，例如：</span>`600519`</td></tr><tr><td style="text-align:left;"><span>银行卡卡号</span></td><td style="text-align:left;">`^[1-9]{1}(?:\d{15}|\d{18})$`</td><td style="text-align:left;"><span>一般为19位</span></td></tr></tbody></table></figure><h2 id='互联网相关'><strong><span><span>互联网相关</span></span></strong></h2><figure><table><thead><tr><th style="text-align:left;"><span>描述</span></th><th style="text-align:left;"><span>正则表达式</span></th><th style="text-align:left;"><span>备注</span></th></tr></thead><tbody><tr><td style="text-align:left;"><span>域名</span></td><td style="text-align:left;">`^[a-zA-Z0-9][-a-zA-Z0-9]{0,62}(?:\.[a-zA-Z0-9][-a-zA-Z0-9]{0,62})+$`</td><td style="text-align:left;"><span>例如：r2coding.com</span></td></tr><tr><td style="text-align:left;"><span>网址</span></td><td style="text-align:left;">`^(?:https?:\/\/)?[a-zA-Z0-9][-a-zA-Z0-9]{0,62}(?:\.[a-zA-Z0-9][-a-zA-Z0-9]{0,62})+$`</td><td style="text-align:left;"><span>例如：</span>[https://www.r2coding.com/](https://www.r2coding.com/)</td></tr><tr><td style="text-align:left;"><span>带端口号的网址(或IP)</span></td><td style="text-align:left;">`^(?:https?:\/\/)?[\w-]+(?:\.[\w-]+)+:\d{1,5}\/?$`</td><td style="text-align:left;"><span>例如：</span>`http://127.0.0.1:8888/`</td></tr><tr><td style="text-align:left;"><span>URL</span></td><td style="text-align:left;">`^https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()!@:%_\+.~#?&amp;\/\/=]*)$`</td><td style="text-align:left;"><span>例如：</span>[https://www.r2coding.com/#/README?id=1](https://www.r2coding.com/#/README?id=1)</td></tr><tr><td style="text-align:left;"><span>邮箱email</span></td><td style="text-align:left;">`^[A-Za-z0-9\u4e00-\u9fa5]+@[a-zA-Z0-9][-a-zA-Z0-9]{0,62}(?:\.[a-zA-Z0-9][-a-zA-Z0-9]{0,62})+$`</td><td style="text-align:left;"><span>支持中文，例如：</span>`codesheep@cs.com`</td></tr><tr><td style="text-align:left;"><span>用户名</span></td><td style="text-align:left;">`^[a-zA-Z0-9_-]{4,20}$`</td><td style="text-align:left;"><span>4到20位</span></td></tr><tr><td style="text-align:left;"><span>弱密码</span></td><td style="text-align:left;">`^[\w]{6,16}$`</td><td style="text-align:left;"><span>6~16位，包含大小写字母和数字的组合</span></td></tr><tr><td style="text-align:left;"><span>强密码</span></td><td style="text-align:left;">`^.*(?=.{6,})(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[!@\.#$%^&amp;*? ]).*$`</td><td style="text-align:left;"><span>至少6位，包括至少1个大写字母，1个小写字母，1个数字，1个特殊字符</span></td></tr><tr><td style="text-align:left;"><span>端口号</span></td><td style="text-align:left;">`^(?:[0-9]|[1-9][0-9]{1,3}|[1-5][0-9]{4}|6[0-4][0-9]{3}|65[0-4][0-9]{2}|655[0-2][0-9]|6553[0-5])$`</td><td style="text-align:left;"><span>例如：</span>`65535`</td></tr><tr><td style="text-align:left;"><span>IPv4地址</span></td><td style="text-align:left;">`^(?:(?:\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.){3}(?:\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])$`</td><td style="text-align:left;"><span>例如：</span>`192.168.31.1`</td></tr><tr><td style="text-align:left;"><span>IPv4地址+端口</span></td><td style="text-align:left;">`^(?:(?:\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.){3}(?:\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])(?::(?:[0-9]|[1-9][0-9]{1,3}|[1-5][0-9]{4}|6[0-4][0-9]{3}|65[0-4][0-9]{2}|655[0-2][0-9]|6553[0-5]))?$`</td><td style="text-align:left;"><span>例如：</span>`192.168.31.1:8080`</td></tr><tr><td style="text-align:left;"><span>IPv6地址</span></td><td style="text-align:left;">`^(([0-9a-fA-F]{1,4}:){7,7}[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,7}:|([0-9a-fA-F]{1,4}:){1,6}:[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,5}(:[0-9a-fA-F]{1,4}){1,2}|([0-9a-fA-F]{1,4}:){1,4}(:[0-9a-fA-F]{1,4}){1,3}|([0-9a-fA-F]{1,4}:){1,3}(:[0-9a-fA-F]{1,4}){1,4}|([0-9a-fA-F]{1,4}:){1,2}(:[0-9a-fA-F]{1,4}){1,5}|[0-9a-fA-F]{1,4}:((:[0-9a-fA-F]{1,4}){1,6})|:((:[0-9a-fA-F]{1,4}){1,7}|:)|fe80:(:[0-9a-fA-F]{0,4}){0,4}%[0-9a-zA-Z]{1,}|::(ffff(:0{1,4}){0,1}:){0,1}((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])|([0-9a-fA-F]{1,4}:){1,4}:((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9]))$`</td><td style="text-align:left;"><span>例如：</span>`CDCD:910A:2222:5498:8475:1111:3900:2020`</td></tr><tr><td style="text-align:left;"><span>IPv6地址+端口</span></td><td style="text-align:left;">`^\[(([0-9a-fA-F]{1,4}:){7,7}[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,7}:|([0-9a-fA-F]{1,4}:){1,6}:[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,5}(:[0-9a-fA-F]{1,4}){1,2}|([0-9a-fA-F]{1,4}:){1,4}(:[0-9a-fA-F]{1,4}){1,3}|([0-9a-fA-F]{1,4}:){1,3}(:[0-9a-fA-F]{1,4}){1,4}|([0-9a-fA-F]{1,4}:){1,2}(:[0-9a-fA-F]{1,4}){1,5}|[0-9a-fA-F]{1,4}:((:[0-9a-fA-F]{1,4}){1,6})|:((:[0-9a-fA-F]{1,4}){1,7}|:)|fe80:(:[0-9a-fA-F]{0,4}){0,4}%[0-9a-zA-Z]{1,}|::(ffff(:0{1,4}){0,1}:){0,1}((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])|([0-9a-fA-F]{1,4}:){1,4}:((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9]))\](?::(?:[0-9]|[1-9][0-9]{1,3}|[1-5][0-9]{4}|6[0-4][0-9]{3}|65[0-4][0-9]{2}|655[0-2][0-9]|6553[0-5]))?$`</td><td style="text-align:left;"><span>例如：</span>`[CDCD:910A:2222:5498:8475:1111:3900:2020]:9800`</td></tr><tr><td style="text-align:left;"><span>子网掩码</span></td><td style="text-align:left;">`^(?:254|252|248|240|224|192|128)\.0\.0\.0|255\.(?:254|252|248|240|224|192|128|0)\.0\.0|255\.255\.(?:254|252|248|240|224|192|128|0)\.0|255\.255\.255\.(?:255|254|252|248|240|224|192|128|0)$`</td><td style="text-align:left;"><span>例如：</span>`255.255.255.0`</td></tr><tr><td style="text-align:left;"><span>MAC地址</span></td><td style="text-align:left;">`^(?:(?:[a-f0-9A-F]{2}:){5}|(?:[a-f0-9A-F]{2}-){5})[a-f0-9A-F]{2}$`</td><td style="text-align:left;">&nbsp;</td></tr><tr><td style="text-align:left;"><span>Version版本号</span></td><td style="text-align:left;">`^\d+(?:\.\d+){2}$`</td><td style="text-align:left;"><span>例如：</span>`12.1.1`</td></tr><tr><td style="text-align:left;"><span>图片后缀</span></td><td style="text-align:left;">`\.(gif|png|jpg|jpeg|webp|svg|psd|bmp|tif)+`</td><td style="text-align:left;"><span>可按需增删扩展名集合</span></td></tr><tr><td style="text-align:left;"><span>视频后缀</span></td><td style="text-align:left;">`\.(swf|avi|flv|mpg|rm|mov|wav|asf|3gp|mkv|rmvb|mp4)+`</td><td style="text-align:left;"><span>可按需增删扩展名集合</span></td></tr><tr><td style="text-align:left;"><span>图片链接</span></td><td style="text-align:left;">`(?:https?:\/\/)?[a-zA-Z0-9][-a-zA-Z0-9]{0,62}(?:\.[a-zA-Z0-9][-a-zA-Z0-9]{0,62})+.+\.(gif|png|jpg|jpeg|webp|svg|psd|bmp|tif)`</td><td style="text-align:left;"><span>可按需增删扩展名集合</span></td></tr><tr><td style="text-align:left;"><span>视频链接</span></td><td style="text-align:left;">`(?:https?:\/\/)?[a-zA-Z0-9][-a-zA-Z0-9]{0,62}(?:\.[a-zA-Z0-9][-a-zA-Z0-9]{0,62})+.+\.(swf|avi|flv|mpg|rm|mov|wav|asf|3gp|mkv|rmvb|mp4)`</td><td style="text-align:left;"><span>可按需增删扩展名集合</span></td></tr><tr><td style="text-align:left;"><span>迅雷链接</span></td><td style="text-align:left;">`thunderx?:\/\/[a-zA-Z\d]+=`</td><td style="text-align:left;">&nbsp;</td></tr><tr><td style="text-align:left;"><span>ed2k链接</span></td><td style="text-align:left;">`ed2k:\/\/\|file\|.+\|\/`</td><td style="text-align:left;">&nbsp;</td></tr><tr><td style="text-align:left;"><span>磁力链接</span></td><td style="text-align:left;">`magnet:\?xt=urn:btih:[0-9a-fA-F]{40,}.*`</td><td style="text-align:left;">&nbsp;</td></tr></tbody></table></figure><h2 id='其他'><strong><span><span>其他</span></span></strong></h2><figure><table><thead><tr><th style="text-align:left;"><span>描述</span></th><th style="text-align:left;"><span>正则表达式</span></th><th style="text-align:left;"><span>备注</span></th></tr></thead><tbody><tr><td style="text-align:left;"><span>Windows文件路径</span></td><td style="text-align:left;">`^[a-zA-Z]:(?:\\[\w\u4E00-\u9FA5\s]+)+[.\w\u4E00-\u9FA5\s]+$`</td><td style="text-align:left;"><span>例如：</span>`C:\Users\Administrator\Desktop\a.txt`</td></tr><tr><td style="text-align:left;"><span>Windows文件夹路径</span></td><td style="text-align:left;">`^[a-zA-Z]:(?:\\[\w\u4E00-\u9FA5\s]+)+$`</td><td style="text-align:left;"><span>例如：</span>`C:\Users\Administrator\Desktop`</td></tr><tr><td style="text-align:left;"><span>Linux文件路径</span></td><td style="text-align:left;">`^\/(?:[^/]+\/)*[^/]+$`</td><td style="text-align:left;"><span>例如：</span>`/root/library/a.txt`</td></tr><tr><td style="text-align:left;"><span>Linux文件夹路径</span></td><td style="text-align:left;">`^\/(?:[^/]+\/)*$`</td><td style="text-align:left;"><span>例如：</span>`/root/library/`</td></tr><tr><td style="text-align:left;"><span>MD5格式</span></td><td style="text-align:left;">`^(?:[a-f\d]{32}|[A-F\d]{32})$`</td><td style="text-align:left;"><span>32位MD5，例如：</span>`7552E7071B118CBFFEC8C930455B4297`</td></tr><tr><td style="text-align:left;"><span>BASE64格式</span></td><td style="text-align:left;">`^\s*data:(?:[a-z]+\/[a-z0-9-+.]+(?:;[a-z-]+=[a-z0-9-]+)?)?(?:;base64)?,([a-z0-9!$&amp;',()*+;=\-._~:@/?%\s]*?)\s*$`</td><td style="text-align:left;"><span>例如：</span>`data:image/jpeg;base64,xxxx==`</td></tr><tr><td style="text-align:left;"><span>UUID</span></td><td style="text-align:left;">`^[a-f\d]{4}(?:[a-f\d]{4}-){4}[a-f\d]{12}$`</td><td style="text-align:left;"><span>例如：</span>`94f9d45a-71b0-4b3c-b69d-20c4bc9c8fdd`</td></tr><tr><td style="text-align:left;"><span>16进制</span></td><td style="text-align:left;">`^[A-Fa-f0-9]+$`</td><td style="text-align:left;"><span>例如：</span>`FFFFFF`</td></tr><tr><td style="text-align:left;"><span>16进制颜色</span></td><td style="text-align:left;">`^#?([0-9a-fA-F]{3}|[0-9a-fA-F]{6})$`</td><td style="text-align:left;"><span>例如：</span>`#FFFFFF`</td></tr><tr><td style="text-align:left;"><span>SQL语句</span></td><td style="text-align:left;">`^(?:select|drop|delete|create|update|insert).*$`</td><td style="text-align:left;">&nbsp;</td></tr><tr><td style="text-align:left;"><span>Java包名</span></td><td style="text-align:left;">`^(?:[a-zA-Z_]\w*)+(?:[.][a-zA-Z_]\w*)+$`</td><td style="text-align:left;"><span>例如：</span>`com.r2coding.controller`</td></tr><tr><td style="text-align:left;"><span>文件扩展名</span></td><td style="text-align:left;">`\.(?:doc|pdf|txt)`</td><td style="text-align:left;"><span>可按需增删扩展名集合</span></td></tr><tr><td style="text-align:left;"><span>HTML标签</span></td><td style="text-align:left;">`&lt;(\w+)[^&gt;]*&gt;(.*?&lt;\/\1&gt;)?`</td><td style="text-align:left;"><span>例如：</span>`&lt;div class="navigator"&gt;&lt;/div&gt;`</td></tr><tr><td style="text-align:left;"><span>HTML注释</span></td><td style="text-align:left;">`&lt;!--(.*?)--&gt;`</td><td style="text-align:left;"><span>例如：</span>`&lt;!--注释--&gt;`</td></tr></tbody></table></figure><h1 id='花絮'><span><span>花絮</span></span></h1><blockquote><p><span>该⽂档会持续更新，有新东⻄再往⾥加。另外由于时间仓促和个⼈精⼒有限，难免会有疏漏和不当的地⽅，还望多多谅解。</span></p></blockquote></div></div>
+</body>
+</html>
